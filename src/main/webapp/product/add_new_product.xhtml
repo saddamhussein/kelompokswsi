@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head></h:head>
+<body>
+	<h3>
+		<h:form>
+			<h:inputHidden value="#{pc.productId}" converter="javax.faces.Long" />
+			<h:messages />
+			<table>
+				<tr>
+					<td align="right">Category :</td>
+					<td><h:inputText value="#{pc.categoryId}" required="true"
+							label="category id" /></td>
+				</tr>
+				<tr>
+					<td align="right">Description :</td>
+					<td><h:inputText value="#{pc.description}" required="true"
+							label="description" /></td>
+				</tr>
+				<tr>
+					<td align="right">Name :</td>
+					<td><h:inputText value="#{pc.name}" required="true"
+							label="name" /></td>
+				</tr>
+				<tr>
+					<td align="right">Price :</td>
+					<td><h:inputText value="#{pc.price}" label="price" /></td>
+				</tr>
+				<tr>
+					<td align="right">Stock :</td>
+					<td><h:inputText value="#{pc.stock}" required="true"
+							label="stock" /></td>
+				</tr>
+				<tr>
+					<td align="right">Supplier :</td>
+					<td><h:inputText value="#{pc.supplierId}" label="supllier id" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><h:commandButton action="#{pc.save}" value="Save" /></td>
+				</tr>
+			</table>
+		</h:form>
+	</h3>
+</body>
+</html>

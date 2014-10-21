@@ -19,7 +19,7 @@ public class Product implements Serializable {
 	@Id
 	@GeneratedValue
 	@Column(name="id", nullable=false)
-	private Long id;
+	private Long productId;
 	
 	@Column(name = "name", length = 50, nullable = false)
 	private String name;
@@ -33,11 +33,11 @@ public class Product implements Serializable {
 	@Column(name = "description", nullable = false)
 	private String description;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "category_id")
 	private Category category;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "supplier_id")
 	private Supplier supplier;
 	
@@ -65,12 +65,14 @@ public class Product implements Serializable {
 		this.description = description;
 	}
 
-	public Long getId() {
-		return id;
+
+
+	public Long getProductId() {
+		return productId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setProductId(Long productId) {
+		this.productId = productId;
 	}
 
 	public String getName() {
@@ -105,9 +107,17 @@ public class Product implements Serializable {
 		this.description = description;
 	}
 
+	public Supplier getSupplier() {
+		return supplier;
+	}
+
+	public void setSupplier(Supplier supplier) {
+		this.supplier = supplier;
+	}
+
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", price=" + price
+		return "Product [id=" + productId + ", name=" + name + ", price=" + price
 				+ ", stock=" + stock + ", description=" + description + "]";
 	}
 
